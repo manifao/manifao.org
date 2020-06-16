@@ -1,24 +1,39 @@
 require('dotenv').config();
 
 const path = require('path');
+const mongoose = require('mongoose');
 const express = require('express');
-const bodyParser = require('body-parser')
+const helmet = require('helmet');
+const bodyParser = require('body-parser');
+
+const logger = require('./utils/logger');
+
+const chat = require('./routes/chat.route');
+
+const PORT = process.env.PORT || 3330;
 const app = express();
-const http = require('http').Server(app);
 
-const PORT = process.env.PORT || 3000;
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+  logger.info('Connected to database...');
+});
 
-app.use(express.static(path.join(__dirname, 'www')));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '5mb' }));
 app.use(bodyParser.urlencoded({extended: false}))
+app.use(express.json({ limit: '5mb' }));
+app.use(helmet());
+app.use(express.static(path.join(__dirname, 'www')));
 
 app.get('/', (req, res) => {
   res.status(200).send({
     success: true,
-    data: 'Hello'
+    data: { message: 'API OK' }
   });
-})
-
-var server = http.listen(PORT, () => {
-  console.log('server is running on port', server.address().port);
 });
+
+chat(app);
+
+const server = app.listen(PORT, () => {
+  logger.info(`Listening @ ${PORT}`);
+});
+
+module.exports = server;
