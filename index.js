@@ -1,8 +1,12 @@
+require('dotenv').config();
+
 const path = require('path');
-var express = require('express');
-var bodyParser = require('body-parser')
-var app = express();
-var http = require('http').Server(app);
+const express = require('express');
+const bodyParser = require('body-parser')
+const app = express();
+const http = require('http').Server(app);
+
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'www')));
 app.use(bodyParser.json());
@@ -15,6 +19,6 @@ app.get('/', (req, res) => {
   });
 })
 
-var server = http.listen(3000, () => {
+var server = http.listen(PORT, () => {
   console.log('server is running on port', server.address().port);
 });
