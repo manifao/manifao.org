@@ -1,0 +1,12 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.body-container {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: linear-gradient(cornflowerblue, deeppink);
+}
