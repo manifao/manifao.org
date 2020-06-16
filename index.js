@@ -6,12 +6,15 @@ const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 const logger = require('./utils/logger');
 
 const chat = require('./routes/chat.route');
 
 const PORT = process.env.PORT || 3330;
-const app = express();
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   logger.info('Connected to database...');
@@ -30,9 +33,13 @@ app.get('/', (req, res) => {
   });
 });
 
-chat(app);
+chat(app, io);
 
-const server = app.listen(PORT, () => {
+io.on('connection', () =>{
+  logger.info('a user is connected')
+});
+
+const server = http.listen(PORT, () => {
   logger.info(`Listening @ ${PORT}`);
 });
 

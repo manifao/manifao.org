@@ -2,7 +2,7 @@ const express = require('express');
 
 const Message = require('../models/message.model');
 
-module.exports = (app) => {
+module.exports = (app, io) => {
   const router = express.Router();
   app.use('/chat', router);
 
@@ -15,6 +15,7 @@ module.exports = (app) => {
 
   router.post('/', (req, res) => {
     const mMessage = new Message(req.body);
+    io.emit('message', req.body);
 
     mMessage.save().then((saved) => {
       res.status(200).send({

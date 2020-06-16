@@ -1,3 +1,5 @@
+const socket = io();
+
 $(() => {
   $("#input-send").click(()=> {
     const mName = $("#input-name").val();
@@ -13,8 +15,15 @@ $(() => {
   });
 });
 
+socket.on('message', addMessages);
+
 function addMessages(message) {
-  $("#my-chat-messages").append(`<div> ${message.name} </div> <div> ${message.message} </div>`);
+  $("#my-chat-messages").append(`
+    <div class="chat-message">
+      <div class="message-user">${message.user}</div>
+      <div class="message-message">${message.message}</div>
+    </div>`);
+  $("#my-chat-messages").scrollTop($("#my-chat-messages").prop("scrollHeight"));
 }
 
 function sendMessage(message) {

@@ -84,3 +84,21 @@ label.form-label-error {
 textarea.form-element {
   height: 4em;
 }
+
+.chat-message {
+  width: 100%;
+  margin: 10px 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  background-color: bisque;
+}
+
+.message-user {
+  width: 25%;
+}
+
+.message-message {
+  width: 75%;
+}
