@@ -9,7 +9,7 @@ body, html {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  background-image: linear-gradient(cornflowerblue, deeppink);
+  background: #ff914d;
 }
 
 .chat-container {
