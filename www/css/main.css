@@ -4,8 +4,8 @@
   --color-bg: #ff914d;
   --color-light: #fff;
   --color-dark: #000;
-  --color-hover: #aaa;
-  --color-error: #f44;
+  --color-hover: #444;
+  --color-error: #fff;
 }
 
 body, html {

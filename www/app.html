@@ -13,26 +13,30 @@
     <meta property="og:url" content="https://manifao.org/app.html">
     <meta property="og:site_name" content="Manifão.org">
     <meta property="og:description" content="Plataforma voltada para o compartilhamento de manifestações de cidadania.">
-    <meta property="og:image" content="imgs/cover.jpg">
+    <meta property="og:image" content="/imgs/cover.jpg">
     <meta property="article:publisher" content="https://www.facebook.com/silo.arte.latitude.rural">
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/a82e1ef989.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="js/chat.js"></script>
-    <script src="js/video.js"></script>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
+    <script src="/js/chat.js"></script>
+    <script src="/js/video.js"></script>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/imgs/favicon.ico">
   </head>
   <body>
     <div class="body-container">
       <div class="header-container">
-        <div class="header-logo header-element"></div>
-        <div class="header-info header-element">
+        <div class="header-logo"></div>
+        <div class="header-info">
           <div class="header-title">da diversidade</div>
           <div class="header-counter">1234 pessoas</div>
         </div>
-        <div class="header-icons header-element"></div>
+        <div class="header-icons">
+          <i class="fa fa-camera"></i>
+          <i class="fa fa-image"></i>
+          <i class="fa fa-volume-up"></i>
+        </div>
       </div>
 
       <div class="content-container">
@@ -42,10 +46,10 @@
           <div class="chat-input">
             <input id="input-name" class="form-element" placeholder="Nome">
             <textarea id="input-message" class="form-element" placeholder="Mensagem"></textarea>
+            <button id="input-send" class="form-element input-button">Enviar</button>
             <label id="my-input-send-error" class="form-label-error" for="infput-send">
               Nome e mensagem precisam ser preenchidos !!
             </label>
-            <button id="input-send" class="form-element input-button">Enviar</button>
           </div>
         </div>
         <div class="image-container"></div>
@@ -56,8 +60,5 @@
         </div>
       </div>
     </div>
-    <i class="fa fa-camera"></i>
-    <i class="fa fa-image"></i>
-    <i class="fa fa-volume-up"></i>
   </body>
 </html>
