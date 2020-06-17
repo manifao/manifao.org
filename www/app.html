@@ -4,7 +4,7 @@
     <title>Manifão.org</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <meta name="description" content="Plataforma voltada para o compartilhamento de manifestações de cidadania.">
     <meta name="keywords" content="manifestação, protesto, cidadania">
 
@@ -20,6 +20,7 @@
     <script src="https://use.fontawesome.com/a82e1ef989.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/chat.js"></script>
+    <script src="js/video.js"></script>
     <link rel="stylesheet" href="css/app.css">
     <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
   </head>
@@ -48,7 +49,11 @@
           </div>
         </div>
         <div class="image-container"></div>
-        <div class="video-container"></div>
+        <div class="video-container">
+          <div class="video-wrapper">
+            <iframe id="my-live" src="https://www.youtube-nocookie.com/embed/J3pF2jkQ4vc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </div>
     <i class="fa fa-camera"></i>

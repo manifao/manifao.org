@@ -1,5 +1,10 @@
 @import "main.css";
 
+html {
+  height: 100%;
+  min-height: 100vh;
+}
+
 .body-container {
   width: 100vw;
   height: 100%;
@@ -35,11 +40,12 @@
   text-transform: uppercase;
 }
 
-.header-icons {
-  
-}
+.header-icons {}
 
 .content-container {
+  display: flex;
+  flex-direction: row;
+
   width: 100%;
   height: 80%;
 }
@@ -49,7 +55,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 12px;
+  padding: 6px;
   box-sizing: border-box;
 }
 
@@ -98,7 +104,7 @@ input.form-element, textarea.form-element {
   width: 100%;
   margin: 7px auto;
   border: none;
-  font-size: 24px;
+  font-size: 18px;
   box-sizing: border-box;
   background-color: var(--color-dark);
   color: var(--color-light);
@@ -125,12 +131,12 @@ label.form-label-error {
   opacity: 0;
   color: var(--color-error);
   text-align: center;
-  font-size: 32px;
+  font-size: 20px;
   margin-bottom: 12px;
 }
 
 textarea.form-element {
-  height: 4em;
+  flex-grow: 1;
 }
 
 .chat-message {
@@ -156,7 +162,31 @@ textarea.form-element {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 12px;
+  padding: 6px;
   box-sizing: border-box;
   background-color: aqua;
+}
+
+.video-container {
+  width: 50%;
+  height: 100%;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
 }
