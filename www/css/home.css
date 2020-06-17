@@ -1,0 +1,40 @@
+@import "main.css";
+
+.body-container {
+  padding: 24px;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+.home-logo {
+  width: 100%;
+  padding-bottom: 46%;
+  background-image: url(../imgs/logo.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.home-subtitle {
+  font-size: 50px;
+  margin: 40px auto;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.home-text {
+  font-size: 22px;
+  line-height: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
