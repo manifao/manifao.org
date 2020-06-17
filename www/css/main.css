@@ -14,10 +14,3 @@ body, html {
   border: 0;
   font-family: LeagueGothic, sans-serif;
 }
-
-.body-container {
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-  background: var(--color-bg);
-}
