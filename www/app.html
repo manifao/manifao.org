@@ -3,29 +3,41 @@
   <head>
     <title>Manifão.org</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/a82e1ef989.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/chat.js"></script>
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <div class="body-container">
-
-      <div class="chat-container">
-        <div id="my-chat-messages" class="chat-messages"></div>
-
-        <div class="chat-input">
-          <label class="form-label" for="input-name">nome</label>
-          <input id="input-name" class="form-element" placeholder="nome">
-
-          <label class="form-label" for="input-message">mensagem</label>
-          <textarea id="input-message" class="form-element"></textarea>
-
-          <label id="my-input-send-error" class="form-label form-label-error" for="infput-send">
-            nome e mensagem precisam ser preenchidos
-          </label>
-          <button id="input-send" class="form-element input-button">Enviar</button>
+      <div class="header-container">
+        <div class="header-logo header-element"></div>
+        <div class="header-info header-element">
+          <div class="header-title">da diversidade</div>
+          <div class="header-counter">1234 conectadas</div>
         </div>
+        <div class="header-icons header-element"></div>
+      </div>
+
+      <div class="content-container">
+        <div class="chat-container">
+          <div id="my-chat-messages" class="chat-messages"></div>
+
+          <div class="chat-input">
+            <input id="input-name" class="form-element" placeholder="Nome">
+            <textarea id="input-message" class="form-element" placeholder="Mensagem"></textarea>
+            <label id="my-input-send-error" class="form-label-error" for="infput-send">
+              Nome e mensagem precisam ser preenchidos !!
+            </label>
+            <button id="input-send" class="form-element input-button">Enviar</button>
+          </div>
+        </div>
+        <div class="image-container"></div>
+        <div class="video-container"></div>
       </div>
     </div>
+    <i class="fa fa-camera"></i>
+    <i class="fa fa-image"></i>
+    <i class="fa fa-volume-up"></i>
   </body>
 </html>

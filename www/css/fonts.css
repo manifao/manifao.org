@@ -1,0 +1,27 @@
+@font-face {
+    font-family: LeagueGothic;
+    src: url(../fonts/League-Gothic/LeagueGothic-Regular.otf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: LeagueGothic;
+    src: url(../fonts/League-Gothic/LeagueGothic-Italic.otf);
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: LeagueGothic;
+    src: url(../fonts/League-Gothic/LeagueGothic-CondensedRegular.otf);
+    font-style: normal;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: LeagueGothic;
+    src: url(../fonts/League-Gothic/LeagueGothic-CondensedItalic.otf);
+    font-style: italic;
+    font-weight: 800;
+}
