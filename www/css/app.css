@@ -15,16 +15,18 @@ html {
 
 .header-container {
   width: 100%;
+  max-width: 800px;
   height: 20%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .header-logo {
   width: 220px;
-  height: 100px;
+  height: 100%;
   padding: 0;
   background-image: url(../imgs/logo.png);
   background-size: contain;
@@ -33,14 +35,47 @@ html {
 }
 
 .header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0;
-  margin: -2px 42px 0;
-  font-size: 50px;
-  line-height: 50px;
+/*  margin: 0 42px;*/
+  font-size: 42px;
+  font-weight: normal;
+  line-height: 55px;
   text-transform: uppercase;
 }
 
-.header-icons {}
+.header-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.header-icons {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 40px;
+}
+
+.header-icons .fa {
+  cursor: pointer;
+  transition: all linear .15s;
+}
+.header-icons .fa:hover {
+  color: var(--color-hover);
+}
+
+.header-instruction {
+  margin-top: 35px;
+  font-size: 20px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: center;
+}
 
 .content-container {
   display: flex;
