@@ -220,6 +220,13 @@ textarea.form-element {
   box-sizing: border-box;
 }
 
+.image-wall-overflow {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
 .image-wall {
   display: flex;
   flex-direction: row;

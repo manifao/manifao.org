@@ -28,7 +28,8 @@ $(() => {
 
         const pImage = {
           data64: mCanvas.toDataURL('image/jpeg'),
-          orientation: (iWidth === iHeight) ? 'SQ' : ((iWidth > iHeight) ? 'H' : 'V')
+          // orientation: (iWidth === iHeight) ? 'SQ' : ((iWidth > iHeight) ? 'H' : 'V')
+          orientation: 'SQ'
         };
 
         $.post(`${window.location.origin}/image`, pImage, (data) => console.log(data));
@@ -45,4 +46,5 @@ socket.on('image', addImage);
 function addImage(image) {
   const mStyle = `style="background-image: url(${image.data64});"`;
   $("#my-image-wall").append(`<div ${mStyle} class="image-common image-${image.orientation}"></div>`);
+  $("#my-image-wall-overflow").scrollTop($("#my-image-wall").prop("scrollHeight"));
 }
