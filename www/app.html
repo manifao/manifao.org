@@ -20,6 +20,7 @@
     <script src="https://use.fontawesome.com/a82e1ef989.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/chat.js"></script>
+    <script src="/js/images.js"></script>
     <script src="/js/video.js"></script>
     <link rel="stylesheet" href="/css/app.css">
     <link rel="shortcut icon" type="image/x-icon" href="/imgs/favicon.ico">
@@ -34,8 +35,9 @@
         </div>
         <div class="header-icons">
           <i class="fa fa-camera"></i>
-          <i class="fa fa-image"></i>
+          <i id="add-image-button" class="fa fa-image"></i>
           <i class="fa fa-volume-up"></i>
+          <input name="imagefile" type="file" id="my-image-input" class="image-input" accept="image/*">
         </div>
       </div>
 
@@ -52,7 +54,9 @@
             </label>
           </div>
         </div>
-        <div class="image-container"></div>
+        <div class="image-container">
+          <div id="my-image-wall" class="image-wall"></div>
+        </div>
         <div class="video-container">
           <div class="video-wrapper">
             <iframe id="my-live" src="https://www.youtube-nocookie.com/embed/J3pF2jkQ4vc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

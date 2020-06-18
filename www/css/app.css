@@ -127,8 +127,15 @@ input.form-element::-ms-input-placeholder, textarea.form-element::-ms-input-plac
   color: var(--color-bg);
 }
 
-input.form-element:focus, textarea.form-element:focus, label.form-label:focus {
+input.form-element:focus,
+textarea.form-element:focus,
+label.form-label:focus,
+input.image-input:focus {
   outline: none;
+}
+
+input.image-input {
+  display: none;
 }
 
 label.form-label-error {
@@ -168,6 +175,32 @@ textarea.form-element {
   flex-direction: column;
   padding: 16px;
   box-sizing: border-box;
+}
+
+.image-wall {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.image-common {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.image-H {
+  width: 66%;
+  padding-bottom: 50%;
+}
+.image-V {
+  width: 33%;
+  padding-bottom: 50%;
+}
+.image-SQ {
+  width: 50%;
+  padding-bottom: 50%;
 }
 
 .video-container {
