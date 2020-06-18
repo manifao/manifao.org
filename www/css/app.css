@@ -1,10 +1,5 @@
 @import "main.css";
 
-html {
-  height: 100%;
-  min-height: 100vh;
-}
-
 .body-container {
   width: 100vw;
   height: 100%;
@@ -14,6 +9,11 @@ html {
 }
 
 .header-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px #000 solid;
+
   width: 100%;
   max-width: 800px;
   height: 20%;
@@ -22,11 +22,12 @@ html {
   justify-content: space-between;
   padding: 20px;
   box-sizing: border-box;
+  background-color: var(--color-bg);
 }
 
 .header-logo {
   width: 220px;
-  height: 100%;
+  height: 102px;
   padding: 0;
   background-image: url(../imgs/logo.png);
   background-size: contain;
@@ -78,14 +79,14 @@ html {
 
 .content-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
-  height: 80%;
+  z-index: 0;
 }
 
 .chat-container {
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: 100vw;
   display: flex;
   flex-direction: column;
   padding: 16px;
@@ -212,8 +213,8 @@ textarea.form-element {
 }
 
 .image-container {
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 16px;
@@ -243,20 +244,20 @@ textarea.form-element {
 
 .image-H {
   width: 66%;
-  padding-bottom: 49%;
+  padding-bottom: 24%;
 }
 .image-V {
   width: 33%;
-  padding-bottom: 49%;
+  padding-bottom: 24%;
 }
 .image-SQ {
-  width: 49%;
-  padding-bottom: 49%;
+  width: 24%;
+  padding-bottom: 24%;
 }
 
 .video-container {
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -276,4 +277,54 @@ textarea.form-element {
 .video-wrapper iframe {
   width: 100%;
   height: 100%;
+}
+
+@media (min-width: 720px) {
+  html {
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  .header-container {
+    position: relative;
+    border: none;
+  }
+
+  .header-logo {
+    width: 220px;
+    height: 100%;
+  }
+
+  .content-container {
+    flex-direction: row;
+    height: 80%;
+  }
+
+  .chat-container {
+    width: 25%;
+    height: 100%;
+  }
+
+  .image-container {
+    width: 25%;
+    height: 100%;
+  }
+
+  .video-container {
+    width: 50%;
+    height: 100%;
+  }
+
+  .image-H {
+    width: 66%;
+    padding-bottom: 49%;
+  }
+  .image-V {
+    width: 33%;
+    padding-bottom: 49%;
+  }
+  .image-SQ {
+    width: 49%;
+    padding-bottom: 49%;
+  }
 }
