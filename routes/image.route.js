@@ -16,6 +16,7 @@ module.exports = (app, io) => {
   router.post('/', (req, res) => {
     const mImage = new imageT(req.body);
     io.emit('image', req.body);
+    io.emit('counter', { count: io.engine.clientsCount });
 
     mImage.save().then((saved) => {
       res.status(200).send({

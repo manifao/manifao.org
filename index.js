@@ -41,8 +41,13 @@ app.get('/app', function(req, res) {
 chat(app, io);
 image(app, io);
 
-io.on('connection', () =>{
-  logger.info('a user is connected')
+io.on('connection', (socket) =>{
+  socket.on('disconnect', () => {
+    io.emit('counter', { count: io.engine.clientsCount });
+  });
+
+  logger.info(`${io.engine.clientsCount} users connected`)
+  io.emit('counter', { count: io.engine.clientsCount });
 });
 
 const server = http.listen(PORT, () => {

@@ -16,6 +16,11 @@ $(() => {
 });
 
 socket.on('message', addMessages);
+socket.on('counter', updateCounter);
+
+function updateCounter(counter) {
+  $("#my-header-counter").html(`${counter.count} pessoa${(counter.count === 1)?'':'s'}`);
+}
 
 function addMessages(message) {
   $("#my-chat-messages").append(`
