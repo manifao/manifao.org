@@ -9,8 +9,10 @@ $(() => {
       sendMessage({ user: mName, message: mMessage });
       $("#input-message").val('');
       $("#my-input-send-error").css("opacity", "0");
+      $("#my-input-send-error").css("height", "0");
     } else {
       $("#my-input-send-error").css("opacity", "1");
+      $("#my-input-send-error").css("height", "auto");
     }
   });
 });
