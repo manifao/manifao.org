@@ -15,6 +15,12 @@ $(() => {
       $("#my-input-send-error").css("height", "auto");
     }
   });
+
+  $("#input-message").keypress((event) => {
+    if(event.which == 13) {
+      $("#input-send").click();
+    }
+  });
 });
 
 socket.on('message', addMessages);
