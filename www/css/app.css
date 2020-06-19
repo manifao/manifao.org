@@ -441,3 +441,17 @@ label.form-label-error {
   cursor: pointer;
   text-transform: uppercase;
 }
+
+.poster-container {
+  background-color: rgba(255,255,255,.3);
+}
+
+.poster-canvas {
+  width: 80%;
+  background-color: var(--color-dark);
+}
+
+.p5Canvas {
+  position: absolute;
+  top: 0;
+}
