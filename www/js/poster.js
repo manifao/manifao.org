@@ -5,25 +5,26 @@ function setup() {
 }
 
 function resetP5() {
+  $("#my-poster-canvas").height($("#my-poster-canvas").width());
   resizeCanvas($("#my-poster-canvas").width(), $("#my-poster-canvas").height());
   pixelDensity(1);
-  smooth(4);
+  smooth();
   background(0,0,0);
 }
 
 function renderTextP5(txt) {
+  const padding = 10;
   background(0,0,0);
   fill(255,255,255);
   stroke(255,255,255);
-  textSize(64);
+  textSize(80);
   textAlign(CENTER, CENTER);
-  text(txt, 0, 0, width, height);
+  text(txt, padding, padding, width - 2 * padding, height - 2 * padding);
 }
 
 $(() => {
   $("#add-poster-button").click(() => {
     $("#my-poster-container").css("display", "block");
-    $("#my-poster-canvas").css("height", $("#my-poster-canvas").width());
     resetP5();
   });
 

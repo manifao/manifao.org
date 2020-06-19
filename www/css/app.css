@@ -448,7 +448,13 @@ label.form-label-error {
 
 .poster-canvas {
   width: 80%;
+  max-width: 600px;
   background-color: var(--color-dark);
+}
+
+input.poster-input {
+  width: 80%;
+  max-width: 600px;
 }
 
 .p5Canvas {
