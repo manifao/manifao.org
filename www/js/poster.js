@@ -49,7 +49,8 @@ $(() => {
 
       $.post(`${window.location.origin}/image`, pImage, (data) => {
         resetP5();
-        $("#my-poster-input").val('');  
+        $("#my-poster-input").val('');
+        $("#my-poster-container").click();
       });
     }
   });
