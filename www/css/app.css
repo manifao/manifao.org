@@ -108,7 +108,12 @@
   flex-grow: 1;
   margin: 0 auto;
   overflow: scroll;
+  overflow-x: hidden;
   background-color: var(--color-dark);
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 0px;
 }
 
 .chat-input {
@@ -230,7 +235,12 @@ label.form-label-error {
   height: 100%;
   box-sizing: border-box;
   overflow: scroll;
+  overflow-x: hidden;
   background-color: var(--color-hover);
+}
+
+.image-wall-overflow::-webkit-scrollbar {
+  width: 0px;
 }
 
 .image-wall {
