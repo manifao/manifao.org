@@ -45,9 +45,9 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 0;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: normal;
-  line-height: 30px;
+  line-height: 24px;
   text-transform: uppercase;
 }
 
@@ -59,11 +59,11 @@
 }
 
 .header-icons {
-  width: 200px;
+  width: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .header-icons .fa {
@@ -76,7 +76,7 @@
 
 .header-instruction {
   margin-top: 12px;
-  font-size: 20px;
+  font-size: 14px;
   letter-spacing: .04em;
   text-transform: uppercase;
   text-align: center;
@@ -325,6 +325,7 @@ label.form-label-error {
   }
 
   .header-icons {
+    width: 200px;
     font-size: 40px;
   }
   .header-instruction {
