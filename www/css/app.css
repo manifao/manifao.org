@@ -402,3 +402,40 @@ label.form-label-error {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.photo-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.photo-canvas {
+  position: absolute;
+  top: 0;
+}
+
+.photo-button-container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 32px auto;
+}
+
+.photo-button {
+  border: none;
+  outline: 0;
+  border-radius: 2px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  text-align: center;
+  background-color: var(--color-dark);
+  color: var(--color-bg);
+  cursor: pointer;
+  text-transform: uppercase;
+}
