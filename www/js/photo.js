@@ -19,6 +19,15 @@ window.onload = () => {
   });
 
   $("#my-photo-container").click(() => {
+    const mVideo = $("#my-photo-video")[0];
+    if (mVideo.srcObject) {
+      mVideo.srcObject.getTracks()[0].stop();
+    }
+
+    $("#my-photo-canvas").css("opacity", "0");
+    $("#my-photo-take-button").css("display", "block");
+    $("#my-photo-retake-button").css("display", "none");
+    $("#my-photo-submit-button").css("display", "none");
     $("#my-photo-container").css("display", "none");
   });
 
@@ -45,7 +54,6 @@ window.onload = () => {
     $("#my-photo-take-button").css("display", "block");
     $("#my-photo-retake-button").css("display", "none");
     $("#my-photo-submit-button").css("display", "none");
-
   });
 
   $("#my-photo-submit-button").click(() => {
@@ -61,7 +69,7 @@ window.onload = () => {
       $("#my-photo-take-button").css("display", "block");
       $("#my-photo-retake-button").css("display", "none");
       $("#my-photo-submit-button").css("display", "none");
-      $("#my-photo-container").css("display", "none");
+      $("#my-photo-container").click();
     });
   });
 }
