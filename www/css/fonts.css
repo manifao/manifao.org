@@ -25,3 +25,17 @@
     font-style: italic;
     font-weight: 800;
 }
+
+@font-face {
+    font-family: Bison;
+    src: url(../fonts/Bison-Bold.ttf);
+    font-style: normal;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Greycliff;
+    src: url(../fonts/Greycliff-Bold.ttf);
+    font-style: normal;
+    font-weight: 800;
+}

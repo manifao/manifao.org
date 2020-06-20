@@ -9,9 +9,11 @@ const colors = [
 
 let currentColor = colors[0];
 let rainbow;
+let mFont;
 
 function preload() {
   rainbow = loadImage('../imgs/rainbow.jpg');
+  mFont = loadFont('../fonts/Bison-Bold.ttf');
 }
 
 function createColorButtons() {
@@ -47,7 +49,6 @@ function renderTextP5() {
   const mMessage = $("#my-poster-input").val().toUpperCase();
 
   background(0,0,0);
-  console.log(currentColor);
   if(currentColor === colors[colors.length - 1]) {
     fill(255);
     stroke(255);
@@ -56,6 +57,7 @@ function renderTextP5() {
     stroke(currentColor);
   }
 
+  textFont(mFont);
   textSize(128);
   textLeading(130);
   textAlign(CENTER, CENTER);
