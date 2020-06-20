@@ -67,6 +67,7 @@
 }
 
 .header-icons .fa {
+  font-weight: 900;
   cursor: pointer;
   transition: all linear .15s;
 }
