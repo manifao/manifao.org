@@ -47,6 +47,9 @@ function resetP5() {
 function renderTextP5() {
   const padding = 10;
   const mMessage = $("#my-poster-input").val().toUpperCase();
+  const charsLeft = $('#my-poster-input').attr('maxlength') - mMessage.length;
+
+  $("#my-poster-char-counter").html(`${charsLeft} caracteres restantes`);
 
   background(0,0,0);
   if(currentColor === colors[colors.length - 1]) {
@@ -58,8 +61,8 @@ function renderTextP5() {
   }
 
   textFont(mFont);
-  textSize(128);
-  textLeading(126);
+  textSize(120);
+  textLeading(122);
   textAlign(CENTER, CENTER);
   text(mMessage, padding, -padding, width - 2 * padding, height + 2 * padding);
   
@@ -74,6 +77,7 @@ $(() => {
   $("#add-poster-button").click(() => {
     $("#my-poster-container").css("display", "block");
     resetP5();
+    renderTextP5();
   });
 
   $("#my-poster-elements-container").click((event) => {
