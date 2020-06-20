@@ -59,9 +59,9 @@ function renderTextP5() {
 
   textFont(mFont);
   textSize(128);
-  textLeading(130);
+  textLeading(126);
   textAlign(CENTER, CENTER);
-  text(mMessage, padding, padding, width - 2 * padding, height - 2 * padding);
+  text(mMessage, padding, -padding, width - 2 * padding, height + 2 * padding);
   
   if(currentColor === colors[colors.length - 1]) {
     blend(rainbow, 0, 0, rainbow.width, rainbow.height, 0, 0, width, height, DARKEST);
