@@ -461,3 +461,18 @@ input.poster-input {
   position: absolute;
   top: 0;
 }
+
+.poster-colors-container {
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.poster-color-common {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+}

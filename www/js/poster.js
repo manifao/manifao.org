@@ -1,3 +1,27 @@
+const colors = [
+  '#ff2038',
+  '#ffcd00',
+  '#008000',
+  '#007dc6',
+  '#c80477'
+];
+
+let currentColor = colors[0];
+
+function createColorButtons() {
+  for(let i = 0; i < colors.length; i++) {
+    const colorEl = document.createElement('div');
+    colorEl.classList.add('poster-color-common');
+    colorEl.style.backgroundColor = colors[i];
+
+    colorEl.addEventListener('click', (event) => {
+      currentColor = event.target.style.backgroundColor;
+      renderTextP5();
+    });
+    $("#my-poster-colors-container").append(colorEl);
+  }
+}
+
 function setup() {
   const cnv = createCanvas(0, 0);
   cnv.id('my-p5-canvas');
@@ -12,17 +36,23 @@ function resetP5() {
   background(0,0,0);
 }
 
-function renderTextP5(txt) {
+function renderTextP5() {
   const padding = 10;
+  const mMessage = $("#my-poster-input").val().toUpperCase();
+
   background(0,0,0);
-  fill(255,255,255);
-  stroke(255,255,255);
-  textSize(80);
+  fill(currentColor);
+  stroke(currentColor);
+
+  textSize(128);
+  textLeading(130);
   textAlign(CENTER, CENTER);
-  text(txt, padding, padding, width - 2 * padding, height - 2 * padding);
+  text(mMessage, padding, padding, width - 2 * padding, height - 2 * padding);
 }
 
 $(() => {
+  createColorButtons();
+
   $("#add-poster-button").click(() => {
     $("#my-poster-container").css("display", "block");
     resetP5();
@@ -59,8 +89,7 @@ $(() => {
     if(event.which == 13) {
       $("#my-poster-button").click();
     } else {
-      const mMessage = $("#my-poster-input").val();
-      renderTextP5(mMessage.toUpperCase());
+      renderTextP5();
     }
   });
 });
