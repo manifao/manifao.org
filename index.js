@@ -34,9 +34,9 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/app', function(req, res) {
-    res.sendFile(path.join(__dirname, 'www', 'app.html'));
-});
+//app.get('/app', function(req, res) {
+//    res.sendFile(path.join(__dirname, 'www', 'app.html'));
+//});
 
 chat(app, io);
 image(app, io);

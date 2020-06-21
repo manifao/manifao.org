@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Manifão.org</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Plataforma voltada para o compartilhamento de manifestações de cidadania.">
+    <meta name="keywords" content="manifestação, protesto, cidadania">
+
+    <meta property="og:title" content="Manifão.org">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manifao.org">
+    <meta property="og:site_name" content="Manifão.org">
+    <meta property="og:description" content="Plataforma voltada para o compartilhamento de manifestações de cidadania.">
+    <meta property="og:image" content="/imgs/cover.jpg">
+    <meta property="article:publisher" content="https://www.facebook.com/silo.arte.latitude.rural">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/a82e1ef989.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/images.js"></script>
+    <script src="/js/video.js"></script>
+    <script src="/js/photo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="/js/poster.js"></script>
+
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/imgs/favicon.ico">
+  </head>
+  <body>
+    <div class="body-container">
+      <div class="header-container">
+        <div class="header-logo"></div>
+        <div class="header-info-wrapper">
+          <div class="header-info">
+            <div class="header-title">da diversidade</div>
+            <div id="my-header-counter" class="header-counter">0 pessoas</div>
+          </div>
+        </div>
+        <div class="header-buttons-wrapper">
+          <div class="header-buttons">
+            <div class="header-icons">
+              <i id="add-image-button" class="fa fa-image"></i>
+              <i id="add-picture-button" class="fa fa-camera"></i>
+              <i id="add-poster-button" class="fa fa-text-height"></i>
+              <input name="imagefile" type="file" id="my-image-input" class="image-input" accept="image/*">
+            </div>
+            <div class="header-instruction">clique e envie seu manifão</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-container">
+        <div class="chat-container">
+          <div id="my-chat-messages" class="chat-messages"></div>
+
+          <div class="chat-input">
+            <input id="input-name" class="form-element" placeholder="Nome">
+            <input id="input-message" class="form-element" placeholder="Mensagem">
+            <label id="my-input-send-error" class="form-label-error" style="opacity: 0; height:0">
+              Nome e mensagem precisam ser preenchidos !!
+            </label>
+            <button id="input-send" class="form-element input-button">Enviar</button>
+          </div>
+        </div>
+        <div class="image-container">
+          <div id="my-image-wall-overflow" class="image-wall-overflow">
+            <div id="my-image-wall" class="image-wall"></div>
+          </div>
+        </div>
+        <div id="my-video-container" class="video-container">
+          <div class="video-wrapper">
+            <iframe id="my-live" src="https://www.youtube-nocookie.com/embed/x6vXPFd1xog" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="my-lightbox-container" class="lightbox-container">
+      <div class="lightbox-close">X</div>
+      <div id="my-lightbox-image" class="lightbox-image"></div>
+    </div>
+
+    <div id="my-photo-container" class="lightbox-container">
+      <div class="lightbox-close">X</div>
+      <div id="my-photo-elements-container" class="photo-container">
+        <video id="my-photo-video" class="photo-video" autoplay muted playsinline></video>
+        <canvas id="my-photo-canvas" class="photo-canvas"></canvas>
+        <div class="photo-button-container">
+          <button id="my-photo-take-button" class="photo-button">tirar foto</button>
+          <button id="my-photo-retake-button" class="photo-button" style="display:none;">tirar novamente</button>
+          <button id="my-photo-submit-button" class="photo-button" style="display:none;">enviar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="my-poster-container" class="lightbox-container poster-container">
+      <div class="lightbox-close">X</div>
+
+      <div id="my-poster-elements-container" class="photo-container">
+        <canvas id="my-poster-canvas" class="poster-canvas"></canvas>
+        <input id="my-poster-input" class="form-element poster-input"
+               placeholder="escreva uma mensagem" maxlength="30">
+        <div class="poster-char-counter-wrapper">
+          <div id="my-poster-char-counter" class="poster-char-counter">_</div>
+        </div>
+        <div id="my-poster-colors-container" class="poster-colors-container"></div>
+        <div class="photo-button-container">
+          <button id="my-poster-button" class="photo-button">enviar poster</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
