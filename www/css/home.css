@@ -19,6 +19,7 @@
   justify-content: center;
   align-content: center;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .home-logo {
@@ -32,7 +33,7 @@
 
 .home-subtitle {
   font-size: 50px;
-  margin: 40px auto;
+  margin: 34px auto;
   text-transform: uppercase;
   text-align: center;
 }
@@ -42,4 +43,25 @@
   line-height: 25px;
   text-transform: uppercase;
   text-align: center;
+}
+
+.form-element.input-button {
+  width: 50%;
+  max-width: 200px;
+  border: none;
+  outline: 0;
+  border-radius: 2px;
+  padding: 10px 20px;
+  margin: 24px auto 0;
+  font-size: 18px;
+  text-align: center;
+  background-color: var(--color-dark);
+  color: var(--color-bg);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all linear .15s;
+  z-index: 4;
+}
+.input-button:hover {
+  background-color: var(--color-hover);
 }
