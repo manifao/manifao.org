@@ -11,6 +11,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 const logger = require('./utils/logger');
+const moment = require('moment-timezone');
 
 const chat = require('./routes/chat.route');
 const image = require('./routes/image.route');
@@ -25,18 +26,24 @@ app.use(bodyParser.json({ limit: '5mb' }));
 app.use(bodyParser.urlencoded({ limit: '5mb', extended: false}))
 app.use(express.json({ limit: '5mb' }));
 app.use(helmet());
-app.use(express.static(path.join(__dirname, 'www')));
 
-app.get('/', (req, res) => {
-  res.status(200).send({
-    success: true,
-    data: { message: 'API OK' }
-  });
+app.get('/', function(req, res) {
+  const July0518 = moment("2020-07-05T17:55:00").tz('America/Sao_Paulo').format('x');
+  const July0520 = moment("2020-07-05T20:20:00").tz('America/Sao_Paulo').format('x');
+
+  const a = moment("2020-06-30T19:10:00").tz('America/Sao_Paulo').format('x');
+  const b = moment("2020-06-30T19:15:00").tz('America/Sao_Paulo').format('x');
+
+  const now = moment().tz('America/Sao_Paulo').format('x');
+
+  if((now > a) && (now < b)) {
+    res.sendFile(path.join(__dirname, 'www', '20200705.html'));
+  } else {
+    res.sendFile(path.join(__dirname, 'www', 'index.html'));
+  }
 });
 
-//app.get('/app', function(req, res) {
-//    res.sendFile(path.join(__dirname, 'www', 'app.html'));
-//});
+app.use(express.static(path.join(__dirname, 'www')));
 
 chat(app, io);
 image(app, io);
