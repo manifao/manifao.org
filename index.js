@@ -30,16 +30,12 @@ app.use(helmet());
 app.get('/', function(req, res) {
   const July0518 = moment.tz('2020-07-05T17:55:00', 'America/Sao_Paulo').format('x');
   const July0520 = moment.tz('2020-07-05T20:10:00', 'America/Sao_Paulo').format('x');
-
-  const a = moment.tz('2020-06-30T19:36:00', 'America/Sao_Paulo').format('x');
-  const b = moment.tz('2020-06-30T19:38:00', 'America/Sao_Paulo').format('x');
-
   const now = moment().tz('America/Sao_Paulo').format('x');
 
-  if((now > a) && (now < b)) {
+  if((now > July0518) && (now < July0520)) {
     res.sendFile(path.join(__dirname, 'www', '20200705.html'));
   } else {
-    res.sendFile(path.join(__dirname, 'www', 'index.html'));
+    res.sendFile(path.join(__dirname, 'www', 'index.logo.html'));
   }
 });
 
