@@ -101,6 +101,7 @@
 
 .chat-messages {
   width: 100%;
+  height: 100%;
   max-width: 720px;
   display: flex;
   flex-direction: column;
@@ -198,6 +199,7 @@ label.form-label-error {
 
 .chat-message {
   width: 100%;
+  min-height: 44px;
   margin: 0 0 5px;
   padding: 10px 6px;
   border-bottom: 1px var(--color-light) solid;
