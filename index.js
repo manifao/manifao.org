@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 });
 
 app.use(bodyParser.json({ limit: '5mb' }));
-app.use(bodyParser.urlencoded({ limit: '5mb', extended: false}))
+app.use(bodyParser.urlencoded({ limit: '5mb', extended: false }));
 app.use(express.json({ limit: '5mb' }));
 app.use(helmet());
 
