@@ -113,6 +113,10 @@
   background-color: var(--color-dark);
 }
 
+.chat-link, .chat-link:visited {
+  color: var(--color-bg);
+}
+
 .chat-messages::-webkit-scrollbar {
   width: 0px;
 }

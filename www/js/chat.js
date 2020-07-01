@@ -34,11 +34,18 @@ function addMessages(message) {
   $("#my-chat-messages").append(`
     <div class="chat-message">
       <div class="message-user">${message.user}</div>
-      <div class="message-message">${message.message}</div>
+      <div class="message-message">${urlify(message.message)}</div>
     </div>`);
   $("#my-chat-messages").scrollTop($("#my-chat-messages").prop("scrollHeight"));
 }
 
 function sendMessage(message) {
   $.post(`${window.location.origin}/chat`, message, (data) => console.log(data));
+}
+
+function urlify(text) {
+  var urlRegex = /(https?:\/\/[^\s]+)/g;
+  return text.replace(urlRegex, function(url) {
+    return `<a class="chat-link" href="${url}" target="_blank">${url}</a>`;
+  });
 }
