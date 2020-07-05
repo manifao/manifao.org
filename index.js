@@ -28,8 +28,10 @@ app.use(express.json({ limit: '5mb' }));
 app.use(helmet());
 
 app.get('/', function(req, res) {
-  const July0518 = moment.tz('2020-07-05T17:55:00', 'America/Sao_Paulo').format('x');
-  const July0520 = moment.tz('2020-07-05T20:10:00', 'America/Sao_Paulo').format('x');
+//  const July0518 = moment.tz('2020-07-05T17:55:00', 'America/Sao_Paulo').format('x');
+//  const July0520 = moment.tz('2020-07-05T20:10:00', 'America/Sao_Paulo').format('x');
+  const July0518 = moment.tz('2020-07-05T15:28:00', 'America/Sao_Paulo').format('x');
+  const July0520 = moment.tz('2020-07-05T25:29:00', 'America/Sao_Paulo').format('x');
   const now = moment().tz('America/Sao_Paulo').format('x');
 
   if((now > July0518) && (now < July0520)) {
