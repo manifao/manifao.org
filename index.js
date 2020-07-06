@@ -35,7 +35,7 @@ app.get('/', function(req, res) {
   if((now > July0518) && (now < July0520)) {
     res.sendFile(path.join(__dirname, 'www', '20200705.html'));
   } else {
-    res.sendFile(path.join(__dirname, 'www', 'landing.20200705.html'));
+    res.sendFile(path.join(__dirname, 'www', 'index.logo.html'));
   }
 });
 
