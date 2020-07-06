@@ -203,7 +203,7 @@ label.form-label-error {
 
 .chat-message {
   width: 100%;
-  min-height: 44px;
+  min-height: fit-content;
   margin: 0 0 5px;
   padding: 10px 6px;
   border-bottom: 1px var(--color-light) solid;
