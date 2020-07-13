@@ -28,11 +28,13 @@ app.use(express.json({ limit: '5mb' }));
 app.use(helmet());
 
 app.get('/', function(req, res) {
-  const July0518 = moment.tz('2020-07-05T17:55:00', 'America/Sao_Paulo').format('x');
-  const July0520 = moment.tz('2020-07-05T20:10:00', 'America/Sao_Paulo').format('x');
+  const startTime = moment.tz('2020-07-05T17:55:00', 'America/Sao_Paulo').format('x');
+  const endTime = moment.tz('2020-07-05T20:10:00', 'America/Sao_Paulo').format('x');
   const now = moment().tz('America/Sao_Paulo').format('x');
 
-  if((now > July0518) && (now < July0520)) {
+  if(now < startTime) {
+    res.sendFile(path.join(__dirname, 'www', 'landing.20200705.html'));
+  } else if(now < endTime) {
     res.sendFile(path.join(__dirname, 'www', '20200705.html'));
   } else {
     res.sendFile(path.join(__dirname, 'www', 'index.logo.html'));
