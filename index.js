@@ -28,14 +28,14 @@ app.use(express.json({ limit: '5mb' }));
 app.use(helmet());
 
 app.get('/', function(req, res) {
-  const startTime = moment.tz('2020-07-05T17:55:00', 'America/Sao_Paulo').format('x');
-  const endTime = moment.tz('2020-07-05T20:10:00', 'America/Sao_Paulo').format('x');
+  const startTime = moment.tz('2020-08-02T17:55:00', 'America/Sao_Paulo').format('x');
+  const endTime = moment.tz('2020-08-02T20:00:00', 'America/Sao_Paulo').format('x');
   const now = moment().tz('America/Sao_Paulo').format('x');
 
   if(now < startTime) {
-    res.sendFile(path.join(__dirname, 'www', 'landing.20200705.html'));
+    res.sendFile(path.join(__dirname, 'www', 'landing.20200802.html'));
   } else if(now < endTime) {
-    res.sendFile(path.join(__dirname, 'www', '20200705.html'));
+    res.sendFile(path.join(__dirname, 'www', '20200802.html'));
   } else {
     res.sendFile(path.join(__dirname, 'www', 'index.logo.html'));
   }
