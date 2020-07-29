@@ -18,6 +18,12 @@ module.exports = (app, io) => {
     io.emit('image', req.body);
     io.emit('counter', { count: io.engine.clientsCount });
 
+    res.status(200).send({
+      success: true,
+      data: { message: mImage }
+    });
+
+    /*
     mImage.save().then((saved) => {
       res.status(200).send({
         success: true,
@@ -29,6 +35,6 @@ module.exports = (app, io) => {
         data: `${err}`
       });
     });
-
+    */
   });
 };
