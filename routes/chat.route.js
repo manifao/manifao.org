@@ -22,19 +22,5 @@ module.exports = (app, io) => {
       success: true,
       data: { message: mMessage }
     });
-
-    /*
-    mMessage.save().then((saved) => {
-      res.status(200).send({
-        success: true,
-        data: { message: saved }
-      });
-    }).catch((err) => {
-      res.status(500).send({
-        success: false,
-        data: `${err}`
-      });
-    });
-    */
   });
 };
