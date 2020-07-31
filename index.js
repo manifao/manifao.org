@@ -33,11 +33,11 @@ app.get('/', function(req, res) {
   const now = moment().tz('America/Sao_Paulo').format('x');
 
   if(now < startTime) {
-    res.sendFile(path.join(__dirname, 'www', 'landing.20200802.html'));
+    res.sendFile(path.join(__dirname, 'www', 'landing.html'));
   } else if(now < endTime) {
-    res.sendFile(path.join(__dirname, 'www', '20200802.html'));
+    res.sendFile(path.join(__dirname, 'www', 'manifao.html'));
   } else {
-    res.sendFile(path.join(__dirname, 'www', 'index.logo.html'));
+    res.sendFile(path.join(__dirname, 'www', 'logo.html'));
   }
 });
 
