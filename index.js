@@ -28,8 +28,8 @@ app.use(express.json({ limit: '5mb' }));
 app.use(helmet());
 
 app.get('/', function(req, res) {
-  const startTime = moment.tz('2020-08-02T17:50:00', 'America/Sao_Paulo').format('x');
-  const endTime = moment.tz('2020-08-02T21:30:00', 'America/Sao_Paulo').format('x');
+  const startTime = moment.tz('2020-09-07T17:50:00', 'America/Sao_Paulo').format('x');
+  const endTime = moment.tz('2020-09-07T22:30:00', 'America/Sao_Paulo').format('x');
   const now = moment().tz('America/Sao_Paulo').format('x');
 
   if(now < startTime) {
