@@ -349,6 +349,11 @@ label.form-label-error {
   .header-about-title {
     font-size: 24px;
     text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .header-about-title:hover + .header-about-text {
+    opacity: 1;
   }
 
   .header-about-text {
@@ -356,6 +361,8 @@ label.form-label-error {
     font-weight: 200;
     text-align: right;
     text-transform: uppercase;
+    opacity: 0;
+    transition: opacity .2s linear;
   }
 
   .header-info {
