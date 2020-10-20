@@ -27,10 +27,6 @@ app.use(bodyParser.urlencoded({ limit: '5mb', extended: false }));
 app.use(express.json({ limit: '5mb' }));
 app.use(helmet());
 
-app.get('/github', function(req,res) {
-    res.sendFile(path.join(__dirname, 'www', 'github.php'));
-})
-
 app.get('/', function(req, res) {
   const startTime = moment.tz('2020-09-07T17:50:00', 'America/Sao_Paulo').format('x');
   const endTime = moment.tz('2020-09-07T22:47:00', 'America/Sao_Paulo').format('x');
