@@ -29,7 +29,7 @@ app.use(helmet());
 
 app.get('/', function(req, res) {
   const startTime = moment.tz('2020-10-22T20:00:00', 'America/Sao_Paulo').format('x');
-  const endTime = moment.tz('2020-10-22T21:00:00', 'America/Sao_Paulo').format('x');
+  const endTime = moment.tz('2020-10-22T20:40:00', 'America/Sao_Paulo').format('x');
   const now = moment().tz('America/Sao_Paulo').format('x');
 
   if(now < startTime) {
