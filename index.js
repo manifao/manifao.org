@@ -30,7 +30,7 @@ app.use(helmet());
 
 app.get('/', function(req, res) {
   const startTime = moment.tz('2021-04-01T18:50:00', 'America/Sao_Paulo').format('x');
-  const endTime = moment.tz('2021-04-01T23:00:00', 'America/Sao_Paulo').format('x');
+  const endTime = moment.tz('2021-04-01T23:45:00', 'America/Sao_Paulo').format('x');
   const now = moment().tz('America/Sao_Paulo').format('x');
 
   if(now < startTime) {
